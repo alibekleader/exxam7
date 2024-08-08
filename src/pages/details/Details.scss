@@ -1,0 +1,122 @@
+@import "../../theme/colors.scss";
+
+@font-face {
+  font-family: Inter, sans-serif;
+  src: url(../../assets/fonts/Inter-Regular.ttf);
+  font-family: Poppins, sans-serif;
+  src: url(../../assets/fonts/Poppins-Regular.ttf);
+}
+.out-card {
+  margin-top: 140px;
+  margin-bottom: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  .card {
+    padding-inline: 8px;
+    background: #fff;
+    width: 224px;
+    height: 390px;
+    border-radius: 30px;
+    font-family: Poppins;
+    transition: 0.4s;
+
+    // LOVE REACTION
+    .love-reaction-container {
+      padding-left: 160px;
+      padding-top: 10px;
+      position: absolute;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .love-reaction-button {
+      background-color: transparent;
+      border: none;
+      cursor: pointer;
+      font-size: 1rem;
+      padding: 0.5rem 1rem;
+      border-radius: 50px;
+      display: flex;
+      align-items: center;
+      transition: background-color 0.3s, transform 0.3s;
+      color: #333;
+      outline: none;
+    }
+    .heart {
+      margin-right: 0.5rem;
+      font-size: 1.2rem;
+    }
+    .chickenHell {
+      padding-top: 25px;
+      margin-bottom: 25px;
+      width: 185px;
+      height: 210px;
+    }
+
+    // LOVE REACTION
+    .type {
+      margin-left: 5px;
+      font-family: Poppins;
+      border-radius: 5px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 69px;
+      height: 22px;
+      background: #f7edd0;
+      color: #daa31a;
+    }
+    p:nth-child(4) {
+      padding-left: 5px;
+      padding-top: 5px;
+      font-family: Poppins;
+      font-size: 23px;
+      font-weight: 600;
+    }
+    .min-rating {
+      padding-left: 5px;
+      padding-top: 8px;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      font-family: Poppins;
+      p:first-child {
+        color: #8e97a6;
+      }
+      p:nth-child(3) {
+        color: #8e97a6;
+      }
+    }
+    .price-add {
+      padding-left: 5px;
+      padding-right: 5px;
+      display: flex;
+      justify-content: space-between;
+      p:first-child {
+        font-weight: 700;
+        font-size: 25px;
+        font-family: Poppins;
+        color: #323142;
+      }
+      button {
+        color: white;
+        border-radius: 9px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 43px;
+        height: 39px;
+        font-size: 24px;
+        background: #000;
+        cursor: pointer;
+      }
+    }
+  }
+  .card:hover {
+    box-shadow: inset 0px 1px 1px 0px rgba(255, 255, 255, 0.1),
+      0px 50px 100px -20px rgba(50, 50, 93, 0.25),
+      0px 30px 60px -30px rgba(0, 0, 0, 0.3);
+  }
+}

@@ -1,0 +1,117 @@
+@import "../../theme/colors.scss";
+
+@font-face {
+  font-family: Inter, sans-serif;
+  src: url(../../assets/fonts/Inter-Regular.ttf);
+  font-family: Poppins, sans-serif;
+  src: url(../../assets/fonts/Poppins-Regular.ttf);
+}
+
+.basket-pg {
+  .cards {
+    margin-top: 150px;
+    margin-bottom: 150px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    .card {
+      .pro-items {
+        margin-top: 50px;
+        border-radius: 12px;
+        padding-inline: 10px;
+        padding-top: 10px;
+        font-family: Poppins;
+        width: 450px;
+        @media only screen and (max-width: 460px) {
+          width: 320px;
+        }
+        height: 90px;
+        display: flex;
+        justify-content: space-between;
+        box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px,
+          rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
+        .left-part {
+          display: flex;
+          .name-price {
+            p:first-child {
+              padding-left: 10px;
+              padding-top: 20px;
+            }
+            p:nth-child(2) {
+              padding-left: 10px;
+              padding-top: 5px;
+            }
+          }
+        }
+        .plus-minus {
+          padding-top: 20px;
+          display: flex;
+          align-items: center;
+          gap: 8px;
+          button:first-child {
+            background: none;
+            border-radius: 10px;
+            width: 30px;
+            height: 30px;
+          }
+          button:nth-child(3) {
+            background: black;
+            color: white;
+            border-radius: 10px;
+            width: 30px;
+            height: 30px;
+          }
+        }
+        .price-total {
+          font-size: 20px;
+          padding-top: 5px;
+          padding-left: 15px;
+        }
+      }
+    }
+  }
+  .payment {
+    max-width: 681px;
+    margin: auto;
+    .subtotal {
+      font-size: 20px;
+      font-weight: 400;
+      display: flex;
+      justify-content: space-between;
+      font-family: Poppins;
+      opacity: 0.7;
+    }
+    .delivery {
+      font-size: 20px;
+      font-weight: 400;
+      padding-top: 20px;
+      display: flex;
+      justify-content: space-between;
+      font-family: Poppins;
+      width: 100%;
+      opacity: 0.7;
+    }
+    .total {
+      font-size: 25px;
+      font-weight: 600;
+      color: #323142;
+      padding-top: 30px;
+      display: flex;
+      justify-content: space-between;
+      font-family: Poppins;
+      width: 100%;
+    }
+    button {
+      margin-bottom: 50px;
+      width: 100%;
+      height: 71px;
+      border-radius: 15px;
+      margin-top: 61px;
+      font-size: 20px;
+      border: none;
+      color: white;
+      background: $logo-pink;
+      cursor: pointer;
+    }
+  }
+}
