@@ -1,51 +1,19 @@
-import { useState } from "react";
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-
-import { Footer, Header } from "./components";
-
-import { Details, Dishes, Home, Login, Register, Basket } from "./pages";
-import "./App.scss";
-// import Basket from "./pages/basket/Basket";
+import { Route, Routes } from "react-router-dom";
+import Home from "./pages/Home/Home";
+import Layout from "./components/layout/layout";
+import "./index.scss";
+import Playlist from "./pages/Playlist/Playlist";
+import LikedSongs from "./pages/LikedSongs/LikedSongs";
 
 const App = () => {
-  const [carrier, setCarrier] = useState("");
-  const [basketNumber, setBasketNumber] = useState(0);
-  const [user, setUser] = useState();
-
   return (
-    <div>
-      <Router>
-        <Header />
-        <Routes>
-          <Route path="/" element={<Register />} />
-          <Route path="/login" element={<Login />} />
-          <Route path="/home" element={<Home carrier={carrier} />} />
-          <Route
-            path="/dishes"
-            element={
-              <Dishes
-                carrier={setCarrier}
-                setCarrier={setCarrier}
-                basketNumber={basketNumber}
-                setBasketNumber={basketNumber}
-              />
-            }
-          />
-          <Route
-            path="/basket"
-            element={
-              <Basket
-                basketNumber={basketNumber}
-                setBasketNumber={basketNumber}
-              />
-            }
-          />
-          <Route path="/details" element={<Details carrier={carrier} />} />
-          <Route />
-        </Routes>
-        <Footer />
-      </Router>
-    </div>
+    <Layout>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/playlists/:playlistID" element={<Playlist />} />
+        <Route path="/liked-songs" element={<LikedSongs />} />
+      </Routes>
+    </Layout>
   );
 };
 
