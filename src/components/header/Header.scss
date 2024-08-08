@@ -1,0 +1,220 @@
+@import "../../theme/colors.scss";
+
+@font-face {
+  font-family: Inter, sans-serif;
+  src: url(../../assets/fonts/Inter-Regular.ttf);
+  font-family: Poppins, sans-serif;
+  src: url(../../assets/fonts/Poppins-Regular.ttf);
+}
+nav {
+  background: $white;
+  opacity: 0.92;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1;
+  .nav-items {
+    height: 120px;
+    display: flex;
+    justify-content: space-between;
+    .left-nav-items {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      // .basket {
+      //   .basket-above {
+      //     margin-top: -50px;
+      //     margin-left: 500px;
+      //     display: flex;
+      //     align-items: center;
+      //     justify-content: center;
+      //     border-radius: 50px;
+      //     position: absolute;
+      //     background: red;
+      //     width: 20px;
+      //     height: 20px;
+      //   }
+      // }
+      p:nth-child(2) {
+        padding-left: 20px;
+        font-weight: 600;
+        font-family: Poppins;
+        color: $logo-pink;
+        font-size: 22px;
+      }
+      a {
+        font-size: 18px;
+        color: $nav-items-color;
+        font-family: Inter;
+        text-decoration: none;
+      }
+      a:nth-child(3) {
+        padding-left: 80px;
+      }
+      a:nth-child(4) {
+        padding-left: 20px;
+      }
+      .active {
+        color: $logo-pink;
+      }
+    }
+    .right-nav-items {
+      align-items: center;
+      display: flex;
+      gap: 10px;
+      .basket {
+        .basket-above {
+          margin-top: -41px;
+          margin-left: 15px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          border-radius: 50px;
+          position: absolute;
+          background: red;
+          width: 18px;
+          height: 18px;
+          color: white;
+          font-size: 12px;
+        }
+      }
+      .curt {
+        padding-right: 10px;
+      }
+      .log {
+        margin-top: 50px;
+        margin-bottom: 50px;
+        padding: 18px 27px;
+        height: 62px;
+        background: none;
+        font-size: 18px;
+        color: $nav-items-color;
+        border-radius: 18px;
+        border: 3px solid $logo-pink;
+        cursor: pointer;
+        transition: 0.4s;
+      }
+      .log:hover {
+        background: $logo-pink;
+        color: white;
+      }
+      .mode-border {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border: 3px solid $logo-pink;
+        border-radius: 50px;
+        width: 48px;
+        height: 48px;
+        cursor: pointer;
+      }
+    }
+    @media only screen and (max-width: 720px) {
+      .left-nav-items {
+        .two-links {
+          display: none;
+        }
+      }
+      .right-nav-items {
+        .log {
+          display: none;
+        }
+      }
+    }
+  }
+
+  hr {
+    opacity: 0.6;
+  }
+}
+
+// HAMBURGER
+.hamburger-menu {
+  display: none;
+  @media only screen and (max-width: 720px) {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .menu-btn {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    width: 30px;
+    height: 40px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    z-index: 1000;
+
+    &:focus {
+      outline: none;
+    }
+
+    .menu-btn-burger {
+      width: 35px;
+      height: 4px;
+      background: #5445b2;
+    }
+
+    &.open {
+      .menu-btn-burger {
+        &:nth-child(1) {
+          transform: translateY(8px) rotate(45deg);
+        }
+
+        &:nth-child(2) {
+          opacity: 0;
+        }
+
+        &:nth-child(3) {
+          transform: translateY(-18px) rotate(-45deg);
+        }
+      }
+    }
+  }
+
+  .menu-items {
+    position: absolute;
+    top: 120px; /* Adjust as needed */
+    left: 0;
+    background-color: #fff;
+    width: 100%;
+    height: 1000%;
+    // height: 500px;
+    color: $logo-pink;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    overflow: hidden;
+    transition: transform 0.4s ease-out;
+    transform: translateX(-100%);
+    z-index: 999;
+    opacity: 0.92;
+    &.open {
+      transform: translateY(0);
+    }
+
+    a:first-child {
+      margin-top: 40px;
+    }
+    a {
+      font-size: 20px;
+      font-family: Inter;
+      margin-top: 25px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 10px;
+      text-decoration: none;
+      color: $nav-items-color;
+      transition: 0.3s;
+    }
+    .active {
+      color: white;
+      background: #6c5fbc;
+    }
+  }
+}
